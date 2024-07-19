@@ -8,6 +8,8 @@
     <title>{{caption}}</title>
 </head>
 <body>
-
+    {% if user %}
+        <p>Вы вошли под именем {{user}}</p>
+    {% endif %}
 </body>
 </html>

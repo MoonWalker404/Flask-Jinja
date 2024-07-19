@@ -4,11 +4,19 @@ app = Flask(__name__)
 
 @app.route("/")
 def films():
-    return render_template("index.html", caption="Фильмы про Гарри")
+    context = {
+        "caption": "Фильмы про Гарри",
+        "user": "Нина"
+    }
+    return render_template("shablon.html", **context)
 
 @app.route("/shablon")
 def films2():
-    return render_template("index.html", caption="Гарри Поттер")
+    context = {
+        "caption": "Гарри Поттер",
+        "link": "Перейти в кинотеатр"
+    }
+    return render_template("index.html", **context)
 
 @app.route("/person/")
 def person():
